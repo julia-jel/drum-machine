@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css?family=Michroma|Orbitron");
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0px;
+}
+
+#root {
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100%;
+  min-height: 100vh;
+}
+
+#drum-machine {
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  border: 5px solid #800000;
+  box-shadow: 0px 0px 5px 5px dimgrey;
+  border-radius: 4px;
+  max-width: 700px;
+}
+
+#header-section {
+  grid-area: header;
+  font-size: 24px;
+  padding: 10px 10px;
+}
+
+#machine-header {
+  padding: 0px;
+  margin: 0px 0px 20px 0px;
+  text-align: center;
+  grid-area: machine-header;
+}
+
+.fas {
+  position: relative;
+  bottom: 10px;
+  border: 2px solid dimgrey;
+  border-radius: 4px;
+  padding: 0px;
+  padding-top: 5px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  grid-area: info-sign;
+}
+
+.fas:hover {
+  cursor: pointer;
+  background-color: #800000;
+}
+
+#manual-info {
+  text-align: center;
+  height: auto;
+  margin: auto;
+  font-size: 14px;
+  grid-area: manual-info;
+}
+
+#display {
+  height: 18px;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 3px;
+  border: 2px solid dimgrey;
+  border-radius: 4px;
+  background-color: #800000;
+  color: lightgrey;
+  grid-area: display;
+}
+
+#tempo-control {
+  padding: 0px 0px 15px 0px;
+  margin-top: -10px;
+  grid-area: tempo;
+}
+
+[type=range] {
+  -webkit-appearance: none;
+  width: 200px;
+}
+
+[type=range]:focus {
+  outline: none;
+}
+
+[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid dimgrey;
+}
+
+[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid dimgrey;
+  height: 15px;
+  width: 7px;
+  border-radius: 0px;
+  background-color: #800000;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid dimgrey;
+}
+
+[type=range]::-moz-range-thumb {
+  webkit-appearance: none;
+  border: 1px solid dimgrey;
+  height: 15px;
+  width: 7px;
+  border-radius: 0px;
+  background-color: #800000;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+[type=range]::-ms-fill-lower {
+  background: black;
+  border: 1px solid dimgrey;
+  border-radius: 0px;
+}
+[type=range]::-ms-fill-upper {
+  background: black;
+  border: 1px solid dimgrey;
+  border-radius: 0px;
+}
+
+input[type=range]::-ms-thumb {
+  border: 1px solid dimgrey;
+  height: 15px;
+  width: 7px;
+  border-radius: 0px;
+  background: #800000;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+#pad-bank {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-area: padbank;
+}
+
+.drum-pad {
+  width: 80px;
+  height: 80px;
+  font-family: 'Michroma', sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  font-stretch: condensed;
+  margin: 4px;
+  border-radius: 4px;
+  box-shadow: 3px 3px dimgrey;
+  outline: none;
+}
+
+.drum-pad-on {
+  cursor: pointer;
+}
+
+.drum-pad-on:active,
+.drum-pad-on-active {
+  background-color: #800000;
+  box-shadow: 1px 1px dimgrey
+}
+
+.drum-pad-off {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+#power-control {
+  grid-area: power;
+}
+
+#power-select {
+  background-color: black;
+  width: 60px;
+  height: 25px;
+  border: 1px solid dimgrey;
+}
+
+#power-select:hover {
+  cursor: pointer;
+}
+
+#power-slider {
+  width: 30px;
+  height: 20px;
+  font-size: 14px;
+  color: white;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.slider-on {
+  float: left;
+  background-color: #800000;
+}
+
+.slider-off {
+  float: right;
+  background-color: #585858;
+}
+
+#footer {
+  text-align: center;
+  padding-bottom: 10px;
+  position: relative;
+  bottom: 0px;
+}
+
+@media (min-width: 700px) {
+  #drum-machine {
+     height: 420px;
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-template-rows: auto 110px 110px 110px;
+     grid-column-gap: 30px;
+     grid-template-areas:
+       "header header"
+       "padbank display"
+       "padbank tempo"
+       "padbank power";
+  }
+  
+  @media (min-width: 700px) {
+    #header-section {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      grid-template-rows: 35px 35px;
+      grid-column-gap: 10px;
+      grid-template-areas:
+        "machine-header info-sign"
+        "manual-info manual-info";
+    }
+  }
+  
+  #header, #tempo-control, #display, #power-control {
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+  }
+  
+  #power-control {
+    margin-bottom: 40px;
+  }
+  
+  #display {
+    margin-top: 40px;
+  }
+  
+  .drum-pad {
+    width: 90px;
+    height: 90px;
+  }
+}
