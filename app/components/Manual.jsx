@@ -1,9 +1,9 @@
 import React from 'react';
 
-//function to toggle an argument:
+//function to toggle the info button:
 
-const toggleInfo = function(s) {
-  return (s === " ") ? "Adjust the tempo, then hold the key on the keyboard." : " "
+const toggleInfo = function(i) {
+  return (i === " ") ? "Adjust the tempo, then hold the key on the keyboard." : " "
 }
 
 //button to show the user manual: 
